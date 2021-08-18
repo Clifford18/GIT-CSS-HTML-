@@ -1,0 +1,255 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+/* Style the top navigation bar */
+
+.navbar div {
+	margin-right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+} 
+.navbar {
+  display: flex;
+  background-color: #4f46cd;
+ /* uncomment to make nav bar Sticky
+  position: -webkit-sticky; /* Safari *?????
+  position: sticky;
+  top: 0;
+  */
+}
+
+/* Style the navigation bar links */
+
+.navbar a {
+	float: left;
+	color: white;
+	padding: 14px 20px;
+	text-decoration: none;
+	text-align: center;
+}
+.navBarDocumentation {
+  flex: 100px;
+}
+.navBarSupport {
+  flex: 100px;
+}
+.navBarAvator {
+  flex: 100px;
+}
+.navBarSearch {
+  flex: 800px;
+}
+.navBarLogo {
+  flex: 280px;
+  float: left;
+}
+
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Navigation search bar css styling */
+.navsearch {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  width: 90%;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.sideleft {
+  flex: 290px;
+  background-color: white;
+  padding: 20px;
+}
+.avatarPicture {
+	 flex: 20%;
+}
+.avatarDescription{
+	flex: 80%;
+}
+
+/* Main column */
+.main {
+  flex: 800px;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Sidebar/right column */
+.sideright {
+  flex: 350px;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+.avatarActivity{
+	flex: 10%;
+
+}
+.descriptionActivity{
+	flex: 80%;
+
+}
+.timeActivity{
+	flex: 10%;
+
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+
+.picNavBar{
+height:30px;
+width:30px;
+border-radius: 50%;
+}
+.picActivities{
+height:30px;
+width:30px;
+border-radius: 50%;
+}
+.picProfile{
+height:50px;
+width:50px;
+border-radius: 50%;
+}
+
+
+.button {
+  background-color: #4f46cd; /* Green */
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+.button:hover {
+opacity: 1;
+}
+.buttonNewProject {
+padding: 12px 0px;
+background-color: #4f46cd; /* blue */
+color: white;
+width: 100%
+}
+.buttonInviteTeam {
+padding: 12px 0px;
+background-color: #e7e7e7; /* gray */
+color: black;
+width: 100%
+
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-right: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+  padding: 8px;
+  text-align: left;
+  
+}
+
+tr:hover {
+  background-color:#f5f5f5;
+}
+tr{
+  border-bottom: 1px solid #ddd;
+}
+
+.fa {
+  font-size: 25px;
+  color: gray;
+}
+
+.checked {
+  color: orange;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.sortButton{
+  border-radius: 8px;
+  padding: 1px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.promembericon {
+	font-size:18px; 
+	color:gray;
+}
+.projectsIcon{
+  color:gray;
+  font-size:18px;
+}
+
+
+
+
