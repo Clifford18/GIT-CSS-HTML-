@@ -23,9 +23,11 @@ CREATE TABLE `members` (
    `member_type`		varchar(30) 	DEFAULT NULL,
    `date_created` 	timestamp 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
    `date_modified` 	timestamp 		NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-   PRIMARY KEY (`employee_id`),
-   UNIQUE KEY `uindex_employees_username` (`username`)
+   PRIMARY KEY (`member_id`),
+   UNIQUE KEY `uindex_members_username` (`username`)
  );
+ INSERT INTO members (member_name, username, email) 
+		VALUES ('John Clifford','johnclifford','johnclifford.cj@gmail.com');
  
  -- project 
 --- fk Username
@@ -39,6 +41,7 @@ CREATE TABLE `members` (
  CREATE TABLE `projects` (
    `project_id` 			bigint 			NOT NULL AUTO_INCREMENT,
    `username` 		varchar(30)  			NOT NULL,
+   `project_name` 	varchar(40)  			NOT NULL,
    `language`	varchar(50) 	NOT NULL,
    `location` 		varchar(45) 	NOT NULL,
    `date_created` 		timestamp 		NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -48,16 +51,24 @@ CREATE TABLE `members` (
    CONSTRAINT `fk_members_projects_username` FOREIGN KEY (`username`) REFERENCES `members` (`username`) ON DELETE CASCADE ON UPDATE CASCADE
  ) ;
  
+  INSERT INTO projects (project_name, username,  language, location) 
+		VALUES ('Workcation','johnclifford','Java','Kenya'),
+			('Easywire','johnclifford','Laravel','USA'),
+			('Easywire','johnclifford','PHP','UK'),
+			('Digest','johnclifford','Next js','Germany'),
+			('Personal Website','johnclifford','Java','Netherland'),
+			('Tail Slides','johnclifford','NodeJS','Sweden'),
+			('KiteTail','johnclifford','TypeScript','South Africa'),
+			('EasyWire','johnclifford','React','Belgium');
+                 
  -- Activity
---- fk username
---- fk project
+--- fk project_id
 --- time stamp
 --- deployed to ()
 --- deployed from
  
  CREATE TABLE `activities` (
    `activity_id` 			bigint 			NOT NULL AUTO_INCREMENT,
-   `username` 		varchar(30)  			NOT NULL,
    `project_id` 		bigint  			NOT NULL,
    `deployed_from`	varchar(50) 	NOT NULL,
    `deployed_to` 		varchar(45) 	NOT NULL,
@@ -65,9 +76,13 @@ CREATE TABLE `members` (
    `date_modified` 		timestamp 		NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
    
    PRIMARY KEY (`activity_id`),
-   KEY `projects_activities_fk` (`username`),
-   CONSTRAINT `fk_projects_activities_username` FOREIGN KEY (`username`) REFERENCES `projects` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
    KEY `projects_activities_fk` (`project_id`),
-   CONSTRAINT `fk_projects_activities_username` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`) ON DELETE CASCADE ON UPDATE CASCADE
+   CONSTRAINT `fk_projects_activities` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`) ON DELETE CASCADE ON UPDATE CASCADE
  ) ;
  
+ INSERT INTO activities (project_id, deployed_from, deployed_to)
+      VALUES(1, 'master', 'production'),
+			(3, 'master', 'staging'),
+            (4, 'master', 'production');
+ 
+				
