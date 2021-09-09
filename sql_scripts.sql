@@ -1,10 +1,8 @@
 
 
-
-
-DROP DATABASE IF EXISTS `git_management_system`;
-CREATE DATABASE `git_management_system`; 
-USE `git_management_system`;
+DROP DATABASE IF EXISTS `design_to_code`;
+CREATE DATABASE `design_to_code`; 
+USE `design_to_code`;
 
 -- member
 --- Name 
